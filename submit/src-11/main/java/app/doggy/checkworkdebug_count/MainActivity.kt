@@ -5,11 +5,11 @@ import android.os.Bundle
 import app.doggy.checkworkdebug_count.databinding.ActivityMainBinding
 
 /**
- * 問題12
- * activity_main.xmlのレイアウトを整えてください。
+ * 問題11
+ * mainActivity.ktにおける名前という名前を全て、より良い名前にしてください。
  */
 
-class MainActivity : AppCompatActivity() {
+class MainActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
