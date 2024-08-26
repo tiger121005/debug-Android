@@ -5,8 +5,8 @@ import android.os.Bundle
 import app.doggy.checkworkdebug_count.databinding.ActivityMainBinding
 
 /**
- * 問題2
- * activity_main.xmlのみを修正して、アプリを起動してください。
+ * 問題3
+ * MainActivity.ktのみを修正して、アプリを起動してください。
  */
 
 class MainActivity : AppCompatActivity() {
