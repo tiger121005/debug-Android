@@ -1,0 +1,123 @@
+import java.nio.file.FileSystems
+import java.nio.file.Files
+
+task task1 {
+    group = 'samayoi'
+    description = 'Task1'
+    doLast {
+        changeSrc("1")
+    }
+}
+task task2 {
+    group = 'samayoi'
+    description = 'Task2'
+    doLast {
+        changeSrc("2")
+    }
+}
+task task3 {
+    group = 'samayoi'
+    description = 'Task3'
+    doLast {
+        changeSrc("3")
+    }
+}
+task task4 {
+    group = 'samayoi'
+    description = 'Task4'
+    doLast {
+        changeSrc("4")
+    }
+}
+task task5 {
+    group = 'samayoi'
+    description = 'Task5'
+    doLast {
+        changeSrc("5")
+    }
+}
+task task6 {
+    group = 'samayoi'
+    description = 'Task6'
+    doLast {
+        changeSrc("6")
+    }
+}
+task task7 {
+    group = 'samayoi'
+    description = 'Task7'
+    doLast {
+        changeSrc("7")
+    }
+}
+task task8 {
+    group = 'samayoi'
+    description = 'Task8'
+    doLast {
+        changeSrc("8")
+    }
+}
+task task9 {
+    group = 'samayoi'
+    description = 'Task9'
+    doLast {
+        changeSrc("9")
+    }
+}
+task task10 {
+    group = 'samayoi'
+    description = 'Task10'
+    doLast {
+        changeSrc("10")
+    }
+}
+task task11 {
+    group = 'samayoi'
+    description = 'Task11'
+    doLast {
+        changeSrc("11")
+    }
+}
+task task12 {
+    group = 'samayoi'
+    description = 'Task12'
+    doLast {
+        changeSrc("12")
+    }
+}
+task task13 {
+    group = 'samayoi'
+    description = 'Task13'
+    doLast {
+        changeSrc("13")
+    }
+}
+task task14 {
+    group = 'samayoi'
+    description = 'Task14'
+    doLast {
+        changeSrc("14")
+    }
+}
+task task15 {
+    group = 'samayoi'
+    description = 'Task15'
+    doLast {
+        changeSrc("15")
+    }
+}
+
+def changeSrc(String id) {
+    def projectRoot = FileSystems.getDefault().getPath("${project.rootDir}")
+    def srcZip = projectRoot.resolve("setup").resolve("data").resolve("samayoi").resolve("src-${id}.zip")
+    if (Files.notExists(srcZip)) {
+        throw new FileNotFoundException("Not found source zip of task${id}.")
+    }
+    def srcDir = projectRoot.resolve("app").resolve("src")
+    if (!srcDir.toFile().deleteDir()) {
+        throw new FileNotFoundException("Can't delete current src.")
+    }
+    getAnt().unzip(src: srcZip.toFile(),
+            dest: projectRoot.resolve("app"),
+            overwrite: "true")
+}
